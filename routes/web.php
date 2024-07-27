@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LandingPageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LandingPageController::class, 'index'])->name('landing.index');
+Route::get('/why-us', [LandingPageController::class, 'whyus'])->name('landing.whyus');
+Route::get('/testimonials', [LandingPageController::class, 'testimonials'])->name('landing.testimonials');
+Route::get('/contact', [LandingPageController::class, 'contact'])->name('landing.contact');
