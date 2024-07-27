@@ -69,14 +69,14 @@
                                 Login
                             </span>
                         </a>
-                        <a href="">
+                        {{-- <a href="">
                             <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                         </a>
                         <form class="form-inline ">
                             <button class="btn nav_search-btn" type="submit">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
-                        </form>
+                        </form> --}}
                     </div>
                 </div>
             </nav>

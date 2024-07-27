@@ -22,19 +22,27 @@
                                 <h6 class="text-center mb-5">
                                     {{ $product->name }}
                                 </h6>
-                                <div>
+                                {{-- <div>
                                     <h6 class="d-flex justify-content-between">
                                         <div class="text-danger my-auto">
                                             Rp. {{ $product->price }}
                                         </div>
                                         <div class="btn btn-sm btn-outline-danger"
-                                            onclick="window.location.href='/google.com';"
+                                            onclick="window.location.href='https://wa.me/1234567890';"
                                             style="cursor: pointer;">
                                             Buy
                                         </div>
-
                                     </h6>
+                                </div> --}}
+                                <div class="d-flex justify-content-around">
+                                    <a class="btn btn-sm btn-warning">
+                                        Rp. {{ $product->price }}
+                                    <a>
+                                    <a class="btn btn-danger text-white" href="https://wa.me/081298735585">
+                                        Beli Produk
+                                    <a>
                                 </div>
+
                                 <div class="new">
                                     <span>
                                         New

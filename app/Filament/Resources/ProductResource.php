@@ -39,8 +39,7 @@ class ProductResource extends Resource
                     ->visibility('private')
                     ->preserveFilenames(),
                 TextInput::make('price')
-                    ->required()
-                    ->numeric(),
+                    ->required(),
                 Textarea::make('description'),
             ]);
     }
