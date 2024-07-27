@@ -12,6 +12,9 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\RichEditor;
+use Filament\Tables\Columns\TextColumn;
 
 class TestimonialResource extends Resource
 {
@@ -23,7 +26,17 @@ class TestimonialResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                TextInput::make('position')
+                    ->maxLength(255),
+                TextInput::make('company')
+                    ->maxLength(255),
+                RichEditor::make('testimonial')
+                    ->required()
+                    ->maxLength(65535)
+                    ->columnSpan('full'),
             ]);
     }
 
@@ -31,7 +44,10 @@ class TestimonialResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('name')->sortable()->searchable(),
+                TextColumn::make('position'),
+                TextColumn::make('company'),
+                TextColumn::make('testimonial')->limit(50),
             ])
             ->filters([
                 //

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -11,7 +13,10 @@ class LandingPageController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $products = Product::all();
+        return view('index', [
+            'products' => $products
+        ]);
     }
 
     public function whyus()
@@ -20,7 +25,10 @@ class LandingPageController extends Controller
     }
     public function testimonials()
     {
-        return view('testimonial');
+        $testimonials = Testimonial::all();
+        return view('testimonial', [
+            'testimonials' => $testimonials,
+        ]);
     }
     public function contact()
     {

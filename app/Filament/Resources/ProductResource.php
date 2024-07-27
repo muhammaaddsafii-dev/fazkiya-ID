@@ -17,6 +17,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Illuminate\Support\Facades\Storage;
 
 class ProductResource extends Resource
 {
@@ -32,7 +33,11 @@ class ProductResource extends Resource
                     ->required()
                     ->maxLength(255),
                 FileUpload::make('image')
-                    ->required(),
+                    ->label('Image')
+                    ->disk('s3')
+                    ->directory('desa-template/product')
+                    ->visibility('private')
+                    ->preserveFilenames(),
                 TextInput::make('price')
                     ->required()
                     ->numeric(),
@@ -45,7 +50,11 @@ class ProductResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')->sortable()->searchable(),
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                    ->getStateUsing(function ($record) {
+                        $path = $record->image;
+                        return Storage::disk('s3')->temporaryUrl($path, now()->addMinutes(5));
+                    }),
                 TextColumn::make('price')->sortable(),
                 TextColumn::make('description')->limit(50),
             ])

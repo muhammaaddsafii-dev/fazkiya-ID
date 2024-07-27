@@ -7,216 +7,49 @@
         <div class="container">
             <div class="heading_container heading_center">
                 <h2>
-                    Latest Products
+                    Our Products
                 </h2>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="{{ 'assets/images/p1.png' }}" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Ring
+                @foreach ($products as $product)
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="box">
+                            <a href="">
+                                <div class="img-box">
+                                    <img src="https://cdn-project-desa.s3.ap-southeast-1.amazonaws.com/{{ $product->image }}"
+                                        alt="">
+                                </div>
+                                <h6 class="text-center mb-5">
+                                    {{ $product->name }}
                                 </h6>
-                                <h6>
-                                    Price
+                                <div>
+                                    <h6 class="d-flex justify-content-between">
+                                        <div class="text-danger my-auto">
+                                            Rp. {{ $product->price }}
+                                        </div>
+                                        <div class="btn btn-sm btn-outline-danger"
+                                            onclick="window.location.href='/google.com';"
+                                            style="cursor: pointer;">
+                                            Buy
+                                        </div>
+
+                                    </h6>
+                                </div>
+                                <div class="new">
                                     <span>
-                                        $200
+                                        New
                                     </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="{{ 'assets/images/p2.png' }}" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Watch
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $300
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="{{ 'assets/images/p3.png' }}" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Teddy Bear
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $110
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="{{ 'assets/images/p4.png' }}" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Flower Bouquet
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $45
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="{{ 'assets/images/p5.png' }}" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Teddy Bear
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $95
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="{{ 'assets/images/p6.png' }}" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Flower Bouquet
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $70
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="{{ 'assets/images/p7.png' }}" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Watch
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $400
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="{{ 'assets/images/p8.png' }}" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Ring
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $450
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            <div class="btn-box">
+            {{-- <div class="btn-box">
                 <a href="">
                     View All Products
                 </a>
-            </div>
+            </div> --}}
         </div>
     </section>
 
