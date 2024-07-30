@@ -28,7 +28,7 @@ class StatsOverview extends BaseWidget
             Stat::make('Jumlah Testimonial', $testimonialCount)
                 ->description('Total testimonial yang dikumpulkan')
                 ->descriptionIcon('heroicon-o-hand-thumb-up')
-                ->color('success'),
+                ->color('danger'),
         ];
     }
 }
